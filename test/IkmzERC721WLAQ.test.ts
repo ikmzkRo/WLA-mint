@@ -50,6 +50,7 @@ beforeEach(async () => {
   // https://docs.ethers.org/v5/api/utils/hashing/#utils-solidityKeccak256
   // ethers.utils.solidityKeccak256はv5.7で実現可能
   // v6.x以降ではundefinedとなる
+  // TODO: 関数内部で何をしているのか詳細化して, ethersV6で利用できそうな関数を指定する
   const leaves = inputs.map((x) =>
     ethers.utils.solidityKeccak256(
       ["address", "uint256"],
