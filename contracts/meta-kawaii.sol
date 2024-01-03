@@ -7,8 +7,12 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 // https://zenn.dev/ryo_takahashi/scraps/ff70f43eb45856#comment-40095f6a46ae37
+
 // アドレスを渡すとMerkleProofが返ってくるAPIのみ実装 運用コストは2円
 // META KAWAIIコントラクトではMerkleTreeによるホワイトリストを採用している
+
+// PresaleMintメソッドを呼び出す際に、引数として _merkleProof を渡す必要がある。
+// この値を取得するAPIをCloudFunctionsにて生やしている
 
 contract MetaKawaii is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
