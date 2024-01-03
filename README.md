@@ -1,4 +1,5 @@
 # whitelist-address-mint 
+## Demo
 1. Clone this repository: `git clone git@github.com:ikmzkRo/whitelist-address-mint.git`
 2. Install packages: `yarn`
 3. Add `.env` file
