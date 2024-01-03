@@ -5,6 +5,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
 // npx hardhat run scripts/deploy/ikmzERC721WL.ts --network goerli
 // npx hardhat verify --network goerli 0x9B97b7bDEFa32b9a26f1Cf27459bcC18281938Ac
+// https://goerli.etherscan.io/address/0x9B97b7bDEFa32b9a26f1Cf27459bcC18281938Ac#writeContract
 
 async function main() {
   let whitelistAddresses = [
@@ -46,8 +47,6 @@ async function main() {
     await IkmzERC721WL.connect(owner).setMerkleRoot(allowlistRootHashHexString);
     const res = await IkmzERC721WL.getMerkleRoot()
     console.log("MerkleRoot is correctly set:", res);
-
-    // result: https://goerli.etherscan.io/address/0x5753951Ac1ea0CD2eda311386Cb8cceB1E7B3942#code
   } catch (error) {
     console.log('error', error)
   }
