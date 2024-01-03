@@ -52,14 +52,16 @@ beforeEach(async () => {
   // v6.x以降ではundefinedとなる
   // TODO: 関数内部で何をしているのか詳細化して, ethersV6で利用できそうな関数を指定する
   const leaves = inputs.map((x) =>
-    ethers.utils.solidityKeccak256(
+    ethers.keccak256(
       ["address", "uint256"],
       [x.address, x.quantity]
     )
   );
+  console.log('leaves', leaves);
 
   const tree = new MerkleTree(leaves, keccak256, { sort: true });
   // console.log(tree.toString());
+
   // └─ cd1ce05417f11ebd5c23784283d21a968ac750e5ac2c2baa6b82835f4ea7caf7
   //  ├─ f92db5e3e1d6bed45d8e50fad47eddeb89c5453802b5cb6d944df2f3679da55c
   //  │  ├─ 3f68e79174daf15b50e15833babc8eb7743e730bb9606f922c48e95314c3905c
